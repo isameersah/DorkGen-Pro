@@ -400,6 +400,35 @@
         .linkedin-fixed:hover {
             transform: translateY(-5px) scale(1.05);
         }
+
+        /* DMCA Badge Styling (No Conflict) */
+.dmca-badge-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    opacity: 0.9;
+    transition: all 0.3s;
+}
+
+.dmca-badge-container:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.dmca-badge img {
+    width: 120px; /* Adjust size if needed */
+    height: auto;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Prevent DMCA script from breaking your layout */
+.dmca-badge * {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
     </style>
 </head>
 
@@ -448,7 +477,11 @@
         </div>
 
         <footer>
+            
             Ultimate DorkGen Pro &copy; 2023 | For authorized security research only
+
+                <div class="dmca-badge-container" style="position: static; margin-top: 20px;">
+
         </footer>
     </div>
 
@@ -1333,6 +1366,17 @@
     <a href="https://linkedin.com/in/isameersah" class="linkedin-btn linkedin-fixed" target="_blank">
         <i class="fab fa-linkedin"></i> Connect
     </a>
+
+    <!-- DMCA Badge (Bottom Right) -->
+<div class="dmca-badge-container">
+    <a href="//www.dmca.com/Protection/Status.aspx?ID=e1c61337-5ccb-4dd6-aeff-a703ed0dc4ef" 
+       title="DMCA.com Protection Status" 
+       class="dmca-badge">
+        <img src="https://images.dmca.com/Badges/dmca_protected_9_120.png?ID=e1c61337-5ccb-4dd6-aeff-a703ed0dc4ef" 
+             alt="DMCA.com Protection Status">
+    </a>
+</div>
+<script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
 </body>
 
 </html>
