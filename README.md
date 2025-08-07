@@ -1,10 +1,6 @@
 
 
-<h1 align="center">🔍 DorkGen Pro</h1> <p align="right">
-  <a href="https://www.dmca.com/Protection/Status.aspx?ID=YOUR-ID">
-    <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=YOUR-ID" alt="DMCA.com Protection Status" width="120">
-  </a>
-</p>
+<h1 align="center">🔍 DorkGen Pro</h1>
 <p align="center"><i>The Ultimate Google Dorking Weapon for Bug Bounty Hunters & Pentesters</i></p>
 <p align="center">🚫 Because manually crafting 500+ dorks is for peasants 🚫</p>
 
@@ -15,7 +11,11 @@
   <img src="https://img.shields.io/badge/VIEW_CODE-GitHub-black?style=for-the-badge&logo=github" alt="View Code">
   <img src="https://img.shields.io/badge/CLIENT_SIDE-100%25--ONLY-informational?style=for-the-badge">
 </p>
-
+ <p align="right">
+  <a href="https://www.dmca.com/Protection/Status.aspx?ID=YOUR-ID">
+    <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=YOUR-ID" alt="DMCA.com Protection Status" width="120">
+  </a>
+</p>
 ---
 
 ## ⚡ TL;DR
