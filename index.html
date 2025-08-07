@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon"
+        href="https://img.icons8.com/?size=100&id=pcp7vNd8z35z&format=png&color=000000">
+
+    <!-- https://img.icons8.com/?size=100&id=oROcPah5ues6&format=png&color=000000 -->
+
+    <title>DorkGen Pro - 500+ Google Dork Operators for Security Research & Bug Bounty
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #00ff88;
+            --accent: #00cc66;
+            --text: #e0e0e0;
+            --text-dark: #333333;
+            --glass: rgba(0, 0, 0, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-highlight: rgba(0, 255, 136, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #111111, #222222);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 18px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            animation: pulse 8s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--secondary), #00ffcc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+            }
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a66c2;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .linkedin-btn:hover {
+            background: #004182;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
+        }
+
+        .main-panel {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-panel,
+        .results-panel {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            padding: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .results-panel h2 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .results-panel h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary), transparent);
+            border-radius: 3px;
+        }
+
+        .query-display {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            word-break: break-all;
+            border: 1px solid var(--glass-border);
+            color: var(--secondary);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .query-display:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .dork-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .dork-categories::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .dork-categories::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .dork-categories::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .category {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            transition: all 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--secondary);
+        }
+
+        .category h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--glass-border);
+            font-size: 1.3rem;
+        }
+
+        .dork-operator {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--secondary);
+            padding: 6px 12px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .dork-operator:hover {
+            background: rgba(0, 255, 136, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+        }
+
+        .search-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .search-actions .btn {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .category:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .category:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .category:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .category:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .category:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .category:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .category:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .category:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .category:nth-child(9) {
+            animation-delay: 0.9s;
+        }
+
+        .category:nth-child(10) {
+            animation-delay: 1s;
+        }
+
+        /* LinkedIn Button - Fixed Bottom Right */
+        .linkedin-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .linkedin-fixed:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- <img src="https://img.icons8.com/?size=100&id=pcp7vNd8z35z&format=png&color=000000" alt="DorkGen Pro Logo"
+                srcset="" class="bug-logo"> -->
+            <h1> DorkGen Pro</h1>
+            <p class="tagline">500+ Google Dork Operators for Security Research & Bug Bounty</p>
+            <!-- Fixed LinkedIn Button (Bottom Right) -->
+
+        </header>
+
+        <div class="main-panel">
+            <div class="input-panel">
+                <div class="form-group">
+                    <label for="domain">Target Domain</label>
+                    <input type="text" id="domain" placeholder="example.com">
+                </div>
+
+                <button id="generate-btn" class="btn">Generate Base Query</button>
+                <button id="clear-btn" class="btn btn-secondary">Clear</button>
+
+                <div class="form-group" style="margin-top: 30px;">
+                    <label for="custom-operator">Custom Operator</label>
+                    <input type="text" id="custom-operator" placeholder="e.g., filetype:pdf">
+                    <button id="add-custom-btn" class="btn btn-secondary" style="margin-top: 5px;">Add Custom</button>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <h2>Generated Query</h2>
+                <div class="query-display" id="query-display">No query generated yet</div>
+
+                <div class="search-actions">
+                    <button id="search-google-btn" class="btn">Search on Google</button>
+                    <button id="copy-query-btn" class="btn btn-secondary">Copy Query</button>
+                </div>
+
+                <h2 style="margin-top: 30px;">500+ Dork Operators</h2>
+                <div class="dork-categories" id="dork-categories">
+                    <!-- Categories will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Ultimate DorkGen Pro &copy; 2023 | For authorized security research only
+        </footer>
+    </div>
+
+    <script>
+        // Massive list of 500+ dork operators organized by categories
+        const dorkCategories = [
+            {
+                name: "🔍 Admin Panels & Login Pages",
+                operators: [
+                    "intitle:admin",
+                    "inurl:/admin/login.php",
+                    "inurl:/wp-admin",
+                    "intext:Admin Login",
+                    "intitle:Login",
+                    "inurl:/administrator/index.php",
+                    "inurl:/cpanel",
+                    "inurl:/admin-area",
+                    "inurl:/admin/login.asp",
+                    "inurl:/admin/account.php",
+                    "inurl:/admincp/login.php",
+                    "inurl:/admin/login.aspx",
+                    "inurl:/admin_area/admin.asp",
+                    "inurl:/admin/controlpanel.php",
+                    "inurl:/adminpanel/login.php",
+                    "inurl:/adminweb/login.aspx",
+                    "inurl:/backend/login.aspx",
+                    "inurl:/manager/html",
+                    "inurl:/webadmin/login.php",
+                    "inurl:/admin123/login.php"
+                ]
+            },
+            {
+                name: "📂 Directory Listings & Sensitive Files",
+                operators: [
+                    "intitle:index of /",
+                    "intitle:index of /admin",
+                    "intitle:index of /backup",
+                    "intitle:index of /config",
+                    "intitle:index of /database",
+                    "intitle:index of /logs",
+                    "intitle:index of /sql",
+                    "intitle:index of /uploads",
+                    "intitle:index of /wp-content",
+                    "intitle:index of /include",
+                    "intitle:index of /private",
+                    "intitle:index of /htdocs",
+                    "intitle:index of /backups",
+                    "intitle:index of /etc",
+                    "intitle:index of /passwd",
+                    "intitle:index of /shadow",
+                    "intitle:index of /root",
+                    "intitle:index of /mail",
+                    "intitle:index of /conf",
+                    "intitle:index of /credentials"
+                ]
+            },
+            {
+                name: "🔑 Credentials & Secrets",
+                operators: [
+                    "intext:password",
+                    "intext:username",
+                    "intext:credentials",
+                    "intext:API_KEY",
+                    "intext:secret",
+                    "intext:database",
+                    "intext:connection string",
+                    "intext:root password",
+                    "intext:wifi password",
+                    "intext:admin pass",
+                    "intext:DB_PASSWORD",
+                    "intext:DB_USERNAME",
+                    "intext:ACCESS_KEY",
+                    "intext:SECRET_KEY",
+                    "intext:JWT_SECRET",
+                    "intext:OAUTH_TOKEN",
+                    "intext:AWS_ACCESS_KEY_ID",
+                    "intext:AWS_SECRET_ACCESS_KEY",
+                    "intext:PRIVATE_KEY",
+                    "intext:ENCRYPTION_KEY"
+                ]
+            },
+            {
+                name: "📄 File Types (SQL, Logs, Configs)",
+                operators: [
+                    "filetype:sql",
+                    "filetype:log",
+                    "filetype:env",
+                    "filetype:php",
+                    "filetype:pdf",
+                    "filetype:xls",
+                    "filetype:doc",
+                    "filetype:txt",
+                    "filetype:bak",
+                    "filetype:config",
+                    "filetype:ini",
+                    "filetype:conf",
+                    "filetype:yml",
+                    "filetype:yaml",
+                    "filetype:json",
+                    "filetype:xml",
+                    "filetype:csv",
+                    "filetype:db",
+                    "filetype:mdb",
+                    "filetype:rdp"
+                ]
+            },
+            {
+                name: "💾 Database Access",
+                operators: [
+                    "inurl:phpmyadmin",
+                    "inurl:dbadmin",
+                    "inurl:mysql",
+                    "inurl:mysqld",
+                    "inurl:pgadmin",
+                    "inurl:sqlite",
+                    "inurl:mongo",
+                    "inurl:db/main",
+                    "inurl:adminer.php",
+                    "inurl:db/db/",
+                    "inurl:/phpMyAdmin/",
+                    "inurl:/mysql/admin/",
+                    "inurl:/mysql/dbadmin/",
+                    "inurl:/pma/",
+                    "inurl:/myadmin/",
+                    "inurl:/db/phpmyadmin/",
+                    "inurl:/admin/phpmyadmin/",
+                    "inurl:/web/phpMyAdmin/",
+                    "inurl:/sqlwebadmin/",
+                    "inurl:/websql/"
+                ]
+            },
+            {
+                name: "🛠️ Developer Tools & Debug",
+                operators: [
+                    "inurl:/debug",
+                    "inurl:/console",
+                    "inurl:/_debug",
+                    "inurl:/_console",
+                    "inurl:/phpinfo.php",
+                    "inurl:/test.php",
+                    "inurl:/debug.log",
+                    "inurl:/error.log",
+                    "inurl:/logs/access.log",
+                    "inurl:/logs/error.log",
+                    "inurl:/dev/console",
+                    "inurl:/_phpinfo",
+                    "inurl:/xdebug",
+                    "inurl:/profiler",
+                    "inurl:/_profiler",
+                    "inurl:/_trace",
+                    "inurl:/_debugger",
+                    "inurl:/_debugbar",
+                    "inurl:/_debugger/console",
+                    "inurl:/_debug/console"
+                ]
+            },
+            {
+                name: "🔌 APIs & Endpoints",
+                operators: [
+                    "inurl:/api/v1",
+                    "inurl:/api/v2",
+                    "inurl:/graphql",
+                    "inurl:/rest/api",
+                    "inurl:/swagger-ui",
+                    "inurl:/swagger.json",
+                    "inurl:/api-docs",
+                    "inurl:/openapi.json",
+                    "inurl:/v1/api",
+                    "inurl:/v2/api",
+                    "inurl:/api/account",
+                    "inurl:/api/user",
+                    "inurl:/api/auth",
+                    "inurl:/api/login",
+                    "inurl:/api/register",
+                    "inurl:/api/token",
+                    "inurl:/api/keys",
+                    "inurl:/api/secret",
+                    "inurl:/api/config",
+                    "inurl:/api/admin"
+                ]
+            },
+            {
+                name: "📡 Network & Server Info",
+                operators: [
+                    "intitle:Apache Status",
+                    "intitle:Apache HTTP Server",
+                    "intitle:nginx",
+                    "intitle:IIS",
+                    "intitle:Microsoft-IIS",
+                    "intitle:Server at",
+                    "intitle:Server Status",
+                    "intitle:Web Server Statistics",
+                    "intitle:Server Information",
+                    "intitle:Hosting by",
+                    "intext:Powered by Apache",
+                    "intext:Powered by nginx",
+                    "intext:Powered by IIS",
+                    "intext:Server Version",
+                    "intext:OS Version",
+                    "intext:Server Software",
+                    "intext:Hosting Provider",
+                    "intext:Server Hostname",
+                    "intext:Server IP",
+                    "intext:Server Configuration"
+                ]
+            },
+            {
+                name: "📧 Email & User Data",
+                operators: [
+                    "intext:@gmail.com",
+                    "intext:@yahoo.com",
+                    "intext:@hotmail.com",
+                    "intext:@outlook.com",
+                    "intext:user list",
+                    "intext:customer list",
+                    "intext:member list",
+                    "intext:email list",
+                    "intext:contact list",
+                    "intext:subscriber list",
+                    "intext:user database",
+                    "intext:customer database",
+                    "intext:member database",
+                    "intext:email database",
+                    "intext:contact database",
+                    "intext:subscriber database",
+                    "intext:user records",
+                    "intext:customer records",
+                    "intext:member records",
+                    "intext:email records"
+                ]
+            },
+            {
+                name: "📱 Mobile & IoT",
+                operators: [
+                    "intitle:Android Debug",
+                    "intitle:iOS Debug",
+                    "intitle:Mobile Admin",
+                    "intitle:Mobile Dashboard",
+                    "intitle:IoT Dashboard",
+                    "intitle:Smart Device",
+                    "intitle:Device Control",
+                    "intitle:Device Management",
+                    "intitle:Device Status",
+                    "intitle:Device Configuration",
+                    "intext:Android API Key",
+                    "intext:iOS API Key",
+                    "intext:Mobile API Key",
+                    "intext:IoT API Key",
+                    "intext:Device API Key",
+                    "intext:Mobile Secret",
+                    "intext:IoT Secret",
+                    "intext:Device Secret",
+                    "intext:Mobile Config",
+                    "intext:IoT Config"
+                ]
+            },
+            {
+                name: "🛡️ Security & Vulnerabilities",
+                operators: [
+                    "inurl:shell.php",
+                    "inurl:cmd.php",
+                    "inurl:backdoor.php",
+                    "inurl:c99.php",
+                    "inurl:config.php.bak",
+                    "inurl:wp-config.php.bak",
+                    "inurl:db_connect.php.bak",
+                    "inurl:settings.php.bak",
+                    "inurl:database.php.bak",
+                    "inurl:db.php.bak",
+                    "inurl:backup.sql",
+                    "inurl:dump.sql",
+                    "inurl:backup.zip",
+                    "inurl:backup.rar",
+                    "inurl:backup.tar",
+                    "inurl:backup.gz",
+                    "inurl:backup.7z",
+                    "inurl:backup.db",
+                    "inurl:backup.mdb",
+                    "inurl:backup.accdb"
+                ]
+            },
+            {
+                name: "🌐 WordPress Specific",
+                operators: [
+                    "inurl:/wp-content/uploads/",
+                    "inurl:/wp-config.php",
+                    "inurl:/wp-admin/admin-ajax.php",
+                    "inurl:/wp-json/wp/v2/users",
+                    "inurl:/wp-login.php",
+                    "inurl:/wp-includes/",
+                    "inurl:/wp-content/plugins/",
+                    "inurl:/wp-content/themes/",
+                    "inurl:/wp-admin/install.php",
+                    "inurl:/wp-admin/setup-config.php",
+                    "intext:WordPress Database",
+                    "intext:WordPress Admin",
+                    "intext:WordPress Login",
+                    "intext:WordPress Setup",
+                    "intext:WordPress Config",
+                    "intext:WordPress Plugin",
+                    "intext:WordPress Theme",
+                    "intext:WordPress Version",
+                    "intext:WordPress Debug",
+                    "intext:WordPress Backup"
+                ]
+            },
+            {
+                name: "🖥️ Remote Access & Control",
+                operators: [
+                    "intitle:Remote Desktop",
+                    "intitle:VNC Viewer",
+                    "intitle:TeamViewer",
+                    "intitle:AnyDesk",
+                    "intitle:Remote Access",
+                    "intitle:Remote Control",
+                    "intitle:Remote Administration",
+                    "intitle:Remote Management",
+                    "intitle:Remote Support",
+                    "intitle:Remote Desktop Web",
+                    "inurl:/remote/",
+                    "inurl:/vnc/",
+                    "inurl:/teamviewer/",
+                    "inurl:/anydesk/",
+                    "inurl:/rdp/",
+                    "inurl:/remote-desktop/",
+                    "inurl:/remote-access/",
+                    "inurl:/remote-control/",
+                    "inurl:/remote-admin/",
+                    "inurl:/remote-management/"
+                ]
+            },
+            {
+                name: "📊 Analytics & Monitoring",
+                operators: [
+                    "intitle:Analytics Dashboard",
+                    "intitle:Monitoring Dashboard",
+                    "intitle:Server Monitoring",
+                    "intitle:Network Monitoring",
+                    "intitle:Traffic Analytics",
+                    "intitle:Visitor Analytics",
+                    "intitle:User Analytics",
+                    "intitle:Performance Monitoring",
+                    "intitle:Log Analytics",
+                    "intitle:Error Monitoring",
+                    "inurl:/analytics/",
+                    "inurl:/monitoring/",
+                    "inurl:/dashboard/",
+                    "inurl:/metrics/",
+                    "inurl:/stats/",
+                    "inurl:/statistics/",
+                    "inurl:/logs/",
+                    "inurl:/traffic/",
+                    "inurl:/visitors/",
+                    "inurl:/performance/"
+                ]
+            },
+            {
+                name: "📝 CMS & Frameworks",
+                operators: [
+                    "inurl:/administrator/index.php",
+                    "inurl:/admin/login.aspx",
+                    "inurl:/admin/account.php",
+                    "inurl:/admincp/login.php",
+                    "inurl:/admin/login.aspx",
+                    "inurl:/admin_area/admin.asp",
+                    "inurl:/admin/controlpanel.php",
+                    "inurl:/adminpanel/login.php",
+                    "inurl:/adminweb/login.aspx",
+                    "inurl:/backend/login.aspx",
+                    "intext:Joomla Admin",
+                    "intext:Drupal Admin",
+                    "intext:Magento Admin",
+                    "intext:Shopify Admin",
+                    "intext:WordPress Admin",
+                    "intext:Laravel Debug",
+                    "intext:Django Debug",
+                    "intext:Ruby on Rails Debug",
+                    "intext:Spring Boot Actuator",
+                    "intext:Flask Debug"
+                ]
+            },
+            {
+                name: "🔐 Authentication & Sessions",
+                operators: [
+                    "inurl:/oauth/authorize",
+                    "inurl:/oauth/token",
+                    "inurl:/auth/login",
+                    "inurl:/auth/register",
+                    "inurl:/auth/token",
+                    "inurl:/auth/oauth",
+                    "inurl:/auth/session",
+                    "inurl:/auth/callback",
+                    "inurl:/auth/refresh",
+                    "inurl:/auth/verify",
+                    "intext:JWT Token",
+                    "intext:OAuth Token",
+                    "intext:Session ID",
+                    "intext:Auth Token",
+                    "intext:Access Token",
+                    "intext:Refresh Token",
+                    "intext:API Token",
+                    "intext:Secret Token",
+                    "intext:Security Token",
+                    "intext:Authentication Token"
+                ]
+            },
+            {
+                name: "📦 Backup & Storage",
+                operators: [
+                    "intitle:Backup Files",
+                    "intitle:Backup Database",
+                    "intitle:Backup Server",
+                    "intitle:Backup Storage",
+                    "intitle:Backup Archive",
+                    "intitle:Backup Repository",
+                    "intitle:Backup Logs",
+                    "intitle:Backup Config",
+                    "intitle:Backup Settings",
+                    "intitle:Backup System",
+                    "inurl:/backup/",
+                    "inurl:/backups/",
+                    "inurl:/archive/",
+                    "inurl:/storage/",
+                    "inurl:/repository/",
+                    "inurl:/dump/",
+                    "inurl:/sqlbackup/",
+                    "inurl:/dbbackup/",
+                    "inurl:/systembackup/",
+                    "inurl:/configbackup/"
+                ]
+            },
+            {
+                name: "📡 Network Devices",
+                operators: [
+                    "intitle:Router Login",
+                    "intitle:Switch Login",
+                    "intitle:Firewall Login",
+                    "intitle:NAS Login",
+                    "intitle:VPN Login",
+                    "intitle:Modem Login",
+                    "intitle:Gateway Login",
+                    "intitle:Access Point Login",
+                    "intitle:Network Device Login",
+                    "intitle:Network Management",
+                    "inurl:/router/",
+                    "inurl:/switch/",
+                    "inurl:/firewall/",
+                    "inurl:/nas/",
+                    "inurl:/vpn/",
+                    "inurl:/modem/",
+                    "inurl:/gateway/",
+                    "inurl:/accesspoint/",
+                    "inurl:/networkdevice/",
+                    "inurl:/networkmanagement/"
+                ]
+            },
+            {
+                name: "📱 Mobile Apps & APIs",
+                operators: [
+                    "intitle:Mobile API",
+                    "intitle:Android API",
+                    "intitle:iOS API",
+                    "intitle:Mobile App",
+                    "intitle:Android App",
+                    "intitle:iOS App",
+                    "intitle:Mobile Backend",
+                    "intitle:Android Backend",
+                    "intitle:iOS Backend",
+                    "intitle:Mobile Service",
+                    "inurl:/mobileapi/",
+                    "inurl:/androidapi/",
+                    "inurl:/iosapi/",
+                    "inurl:/mobileapp/",
+                    "inurl:/androidapp/",
+                    "inurl:/iosapp/",
+                    "inurl:/mobilebackend/",
+                    "inurl:/androidbackend/",
+                    "inurl:/iosbackend/",
+                    "inurl:/mobileservice/"
+                ]
+            },
+            {
+                name: "📊 Business & Finance",
+                operators: [
+                    "intitle:Invoice",
+                    "intitle:Payment",
+                    "intitle:Transaction",
+                    "intitle:Order",
+                    "intitle:Receipt",
+                    "intitle:Financial Report",
+                    "intitle:Balance Sheet",
+                    "intitle:Profit and Loss",
+                    "intitle:Tax Return",
+                    "intitle:Bank Statement",
+                    "inurl:/invoice/",
+                    "inurl:/payment/",
+                    "inurl:/transaction/",
+                    "inurl:/order/",
+                    "inurl:/receipt/",
+                    "inurl:/financialreport/",
+                    "inurl:/balancesheet/",
+                    "inurl:/profitandloss/",
+                    "inurl:/taxreturn/",
+                    "inurl:/bankstatement/"
+                ]
+            },
+            {
+                name: "📝 Legal & Compliance",
+                operators: [
+                    "intitle:Privacy Policy",
+                    "intitle:Terms of Service",
+                    "intitle:Terms and Conditions",
+                    "intitle:User Agreement",
+                    "intitle:Service Agreement",
+                    "intitle:Non-Disclosure Agreement",
+                    "intitle:Contract",
+                    "intitle:Legal Notice",
+                    "intitle:Compliance Report",
+                    "intitle:Audit Report",
+                    "inurl:/privacypolicy/",
+                    "inurl:/termsofservice/",
+                    "inurl:/termsandconditions/",
+                    "inurl:/useragreement/",
+                    "inurl:/serviceagreement/",
+                    "inurl:/nondisclosureagreement/",
+                    "inurl:/contract/",
+                    "inurl:/legalnotice/",
+                    "inurl:/compliancereport/",
+                    "inurl:/auditreport/"
+                ]
+            },
+            {
+                name: "📡 IoT & Smart Devices",
+                operators: [
+                    "intitle:Smart Home",
+                    "intitle:Smart Device",
+                    "intitle:IoT Device",
+                    "intitle:Connected Device",
+                    "intitle:Home Automation",
+                    "intitle:Device Control",
+                    "intitle:Device Management",
+                    "intitle:Device Status",
+                    "intitle:Device Configuration",
+                    "intitle:Device Dashboard",
+                    "inurl:/smarthome/",
+                    "inurl:/smartdevice/",
+                    "inurl:/iotdevice/",
+                    "inurl:/connecteddevice/",
+                    "inurl:/homeautomation/",
+                    "inurl:/devicecontrol/",
+                    "inurl:/devicemanagement/",
+                    "inurl:/devicestatus/",
+                    "inurl:/deviceconfiguration/",
+                    "inurl:/devicedashboard/"
+                ]
+            },
+            {
+                name: "📊 Data & Analytics",
+                operators: [
+                    "intitle:Data Dashboard",
+                    "intitle:Analytics Dashboard",
+                    "intitle:Business Intelligence",
+                    "intitle:Data Visualization",
+                    "intitle:Data Reporting",
+                    "intitle:Data Analysis",
+                    "intitle:Data Mining",
+                    "intitle:Data Warehouse",
+                    "intitle:Data Lake",
+                    "intitle:Data Pipeline",
+                    "inurl:/datadashboard/",
+                    "inurl:/analyticsdashboard/",
+                    "inurl:/businessintelligence/",
+                    "inurl:/datavisualization/",
+                    "inurl:/datareporting/",
+                    "inurl:/dataanalysis/",
+                    "inurl:/datamining/",
+                    "inurl:/datawarehouse/",
+                    "inurl:/datalake/",
+                    "inurl:/datapipeline/"
+                ]
+            },
+            {
+                name: "📡 Cloud & DevOps",
+                operators: [
+                    "intitle:AWS Console",
+                    "intitle:Azure Portal",
+                    "intitle:Google Cloud Console",
+                    "intitle:Kubernetes Dashboard",
+                    "intitle:Docker Dashboard",
+                    "intitle:CI/CD Pipeline",
+                    "intitle:DevOps Dashboard",
+                    "intitle:Cloud Management",
+                    "intitle:Cloud Monitoring",
+                    "intitle:Cloud Security",
+                    "inurl:/awsconsole/",
+                    "inurl:/azureportal/",
+                    "inurl:/googlecloudconsole/",
+                    "inurl:/kubernetesdashboard/",
+                    "inurl:/dockerdashboard/",
+                    "inurl:/cicdpipeline/",
+                    "inurl:/devopsdashboard/",
+                    "inurl:/cloudmanagement/",
+                    "inurl:/cloudmonitoring/",
+                    "inurl:/cloudsecurity/"
+                ]
+            },
+            {
+                name: "📝 Documentation & Wikis",
+                operators: [
+                    "intitle:Wiki",
+                    "intitle:Documentation",
+                    "intitle:User Guide",
+                    "intitle:Technical Documentation",
+                    "intitle:API Documentation",
+                    "intitle:Developer Guide",
+                    "intitle:Admin Guide",
+                    "intitle:Installation Guide",
+                    "intitle:Configuration Guide",
+                    "intitle:Troubleshooting Guide",
+                    "inurl:/wiki/",
+                    "inurl:/documentation/",
+                    "inurl:/userguide/",
+                    "inurl:/technicaldocumentation/",
+                    "inurl:/apidocumentation/",
+                    "inurl:/developerguide/",
+                    "inurl:/adminguide/",
+                    "inurl:/installationguide/",
+                    "inurl:/configurationguide/",
+                    "inurl:/troubleshootingguide/"
+                ]
+            },
+            {
+                name: "📡 VPN & Proxies",
+                operators: [
+                    "intitle:VPN Login",
+                    "intitle:Proxy Login",
+                    "intitle:VPN Configuration",
+                    "intitle:Proxy Configuration",
+                    "intitle:VPN Dashboard",
+                    "intitle:Proxy Dashboard",
+                    "intitle:VPN Management",
+                    "intitle:Proxy Management",
+                    "intitle:VPN Status",
+                    "intitle:Proxy Status",
+                    "inurl:/vpnlogin/",
+                    "inurl:/proxylogin/",
+                    "inurl:/vpnconfiguration/",
+                    "inurl:/proxyconfiguration/",
+                    "inurl:/vpndashboard/",
+                    "inurl:/proxydashboard/",
+                    "inurl:/vpnmanagement/",
+                    "inurl:/proxymanagement/",
+                    "inurl:/vpnstatus/",
+                    "inurl:/proxystatus/"
+                ]
+            },
+            {
+                name: "📊 CRM & ERP Systems",
+                operators: [
+                    "intitle:Salesforce Login",
+                    "intitle:HubSpot Login",
+                    "intitle:Zoho Login",
+                    "intitle:SAP Login",
+                    "intitle:Oracle Login",
+                    "intitle:Dynamics Login",
+                    "intitle:CRM Login",
+                    "intitle:ERP Login",
+                    "intitle:Business Software",
+                    "intitle:Enterprise Software",
+                    "inurl:/salesforcelogin/",
+                    "inurl:/hubspotlogin/",
+                    "inurl:/zohologin/",
+                    "inurl:/saplogin/",
+                    "inurl:/oraclelogin/",
+                    "inurl:/dynamicslogin/",
+                    "inurl:/crmlogin/",
+                    "inurl:/erplogin/",
+                    "inurl:/businesssoftware/",
+                    "inurl:/enterprisesoftware/"
+                ]
+            },
+            {
+                name: "📡 Security Cameras & IoT",
+                operators: [
+                    "intitle:Camera Login",
+                    "intitle:Security Camera",
+                    "intitle:IP Camera",
+                    "intitle:Surveillance Camera",
+                    "intitle:CCTV Camera",
+                    "intitle:Webcam",
+                    "intitle:Video Surveillance",
+                    "intitle:Security Feed",
+                    "intitle:Live Camera",
+                    "intitle:Camera Dashboard",
+                    "inurl:/cameralogin/",
+                    "inurl:/securitycamera/",
+                    "inurl:/ipcamera/",
+                    "inurl:/surveillancecamera/",
+                    "inurl:/cctvcamera/",
+                    "inurl:/webcam/",
+                    "inurl:/videosurveillance/",
+                    "inurl:/securityfeed/",
+                    "inurl:/livecamera/",
+                    "inurl:/cameradashboard/"
+                ]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const domainInput = document.getElementById('domain');
+            const customOperatorInput = document.getElementById('custom-operator');
+            const queryDisplay = document.getElementById('query-display');
+            const generateBtn = document.getElementById('generate-btn');
+            const clearBtn = document.getElementById('clear-btn');
+            const addCustomBtn = document.getElementById('add-custom-btn');
+            const searchGoogleBtn = document.getElementById('search-google-btn');
+            const copyQueryBtn = document.getElementById('copy-query-btn');
+            const dorkCategoriesContainer = document.getElementById('dork-categories');
+
+            let currentQuery = '';
+
+            // Render dork categories
+            function renderDorkCategories() {
+                dorkCategoriesContainer.innerHTML = '';
+
+                dorkCategories.forEach(category => {
+                    const categoryEl = document.createElement('div');
+                    categoryEl.className = 'category';
+
+                    const heading = document.createElement('h3');
+                    heading.textContent = category.name;
+                    categoryEl.appendChild(heading);
+
+                    category.operators.forEach(operator => {
+                        const operatorEl = document.createElement('span');
+                        operatorEl.className = 'dork-operator';
+                        operatorEl.textContent = operator;
+                        operatorEl.title = `Click to add ${operator} to query`;
+
+                        operatorEl.addEventListener('click', function () {
+                            addOperatorToQuery(operator);
+                        });
+
+                        categoryEl.appendChild(operatorEl);
+                    });
+
+                    dorkCategoriesContainer.appendChild(categoryEl);
+                });
+            }
+
+            // Add operator to query
+            function addOperatorToQuery(operator) {
+                const domain = domainInput.value.trim();
+
+                if (!domain) {
+                    alert('Please enter a domain first');
+                    domainInput.focus();
+                    return;
+                }
+
+                if (!currentQuery.includes(`site:${domain}`)) {
+                    currentQuery = `site:${domain} ${operator}`;
+                } else {
+                    currentQuery += ` ${operator}`;
+                }
+
+                updateQueryDisplay();
+            }
+
+            // Update query display
+            function updateQueryDisplay() {
+                queryDisplay.textContent = currentQuery || 'No query generated yet';
+            }
+
+            // Generate base query
+            generateBtn.addEventListener('click', function () {
+                const domain = domainInput.value.trim();
+
+                if (!domain) {
+                    alert('Please enter a domain');
+                    return;
+                }
+
+                currentQuery = `site:${domain}`;
+                updateQueryDisplay();
+            });
+
+            // Clear query
+            clearBtn.addEventListener('click', function () {
+                currentQuery = '';
+                updateQueryDisplay();
+                domainInput.value = '';
+                domainInput.focus();
+            });
+
+            // Add custom operator
+            addCustomBtn.addEventListener('click', function () {
+                const operator = customOperatorInput.value.trim();
+
+                if (!operator) {
+                    alert('Please enter an operator');
+                    return;
+                }
+
+                addOperatorToQuery(operator);
+                customOperatorInput.value = '';
+            });
+
+            // Search on Google
+            searchGoogleBtn.addEventListener('click', function () {
+                if (!currentQuery) {
+                    alert('Please generate a query first');
+                    return;
+                }
+
+                const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(currentQuery)}`;
+                window.open(googleUrl, '_blank');
+            });
+
+            // Copy query to clipboard
+            copyQueryBtn.addEventListener('click', function () {
+                if (!currentQuery) {
+                    alert('No query to copy');
+                    return;
+                }
+
+                navigator.clipboard.writeText(currentQuery)
+                    .then(() => {
+                        const originalText = copyQueryBtn.textContent;
+                        copyQueryBtn.textContent = 'Copied!';
+                        setTimeout(() => {
+                            copyQueryBtn.textContent = originalText;
+                        }, 2000);
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy: ', err);
+                        alert('Failed to copy query');
+                    });
+            });
+
+            // Allow Enter key in domain input to generate base query
+            domainInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    generateBtn.click();
+                }
+            });
+
+            // Allow Enter key in custom operator to add it
+            customOperatorInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    addCustomBtn.click();
+                }
+            });
+
+            // Initialize
+            renderDorkCategories();
+        });
+
+        // Scroll-to-Top Button Logic
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <!-- Scroll-to-Top Button -->
+    <div class="scroll-to-top" id="scrollToTopBtn">
+        ↑
+    </div>
+
+    <a href="https://linkedin.com/in/isameersah" class="linkedin-btn linkedin-fixed" target="_blank">
+        <i class="fab fa-linkedin"></i> Connect
+    </a>
+</body>
+
+</html>
