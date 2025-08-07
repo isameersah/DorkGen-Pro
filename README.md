@@ -5,7 +5,7 @@
 <p align="center"><i>The Ultimate Google Dorking Weapon for Bug Bounty Hunters & Pentesters</i></p>
 <p align="center">🚫 Because manually crafting 500+ dorks is for peasants 🚫</p>
 
-<p align="center"> <a href="https://www.dmca.com/r/g7x19d3"> <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png" alt="DMCA.com Protection Status" width="120"> </a> </p>
+<p align="center"> <a href="https://www.dmca.com/r/g7x19d3" target="_blank"> <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png" alt="DMCA.com Protection Status" width="120"> </a> </p>
 
 ---
 
