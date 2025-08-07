@@ -528,12 +528,21 @@
 </div>
         <footer>
             
-            Ultimate DorkGen Pro &copy; 2023 | For authorized security research only
+    <div class="copyright">
+        DorkGen Pro &copy; <span id="current-year">2023</span> | For authorized security research only
+    </div>
+    
 
                 <div class="dmca-badge-container" style="position: static; margin-top: 20px;">
 
         </footer>
     </div>
+
+    
+<script>
+    // Auto-update copyright year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 
     <script>
         // Massive list of 500+ dork operators organized by categories
