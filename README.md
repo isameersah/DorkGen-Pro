@@ -1,3 +1,10 @@
+<p align="right">
+  <a href="https://www.dmca.com/Protection/Status.aspx?ID=YOUR-ID">
+    <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=YOUR-ID" alt="DMCA.com Protection Status" width="120">
+  </a>
+</p>
+---
+
 <h1 align="center">🔍 DorkGen Pro</h1>
 <p align="center"><i>The Ultimate Google Dorking Weapon for Bug Bounty Hunters & Pentesters</i></p>
 <p align="center">🚫 Because manually crafting 500+ dorks is for peasants 🚫</p>
@@ -14,14 +21,32 @@
 
 ## ⚡ TL;DR
 
-> DorkGen Pro is a 100% client-side tool that instantly spits out **500+ diabolical Google dorks**.  
+> DorkGen Pro is a 100% client-side tool that instantly spits out **500+ Google dorks**.  
 > Think admin panels, passwords, exposed APIs – all at your fingertips.  
 > Dark mode? ✅  
 > Hacker vibes? ✅  
 > Legal disclaimer? ✅ (because we’re not dumb)
 
 ---
+---
 
+## 🖼️ Screenshot
+
+<p align="center">
+  <img src="https://i.imgur.com/wd9MmG0.png" alt="DorkGen Pro UI" width="800"/>
+</p>
+
+---
+
+## 🚀 Live Demo
+
+<p align="center">
+  <a href="https://dorkgenpro.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/TRY_LIVE-DEMO-00ff88?style=for-the-badge&logo=googlechrome" alt="Try Live Demo">
+  </a>
+</p>
+
+---
 ## 💡 What Can It Do?
 
 ✅ Auto-generate 500+ categorized Google Dorks  
@@ -87,9 +112,9 @@ inurl:"/phpinfo.php" OR intitle:"index of" "backup"
 
 ## 🔗 Connect With Me
 
-[![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/YOUR-LINKEDIN)  
-[![Twitter](https://img.shields.io/badge/Follow-Twitter-black?style=flat-square&logo=twitter)](https://twitter.com/YOUR-HANDLE)  
-[![GitHub](https://img.shields.io/badge/Code-GitHub-lightgray?style=flat-square&logo=github)](https://github.com/YOUR-GITHUB)
+[![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/isameersah)  
+[![Twitter](https://img.shields.io/badge/Follow-Twitter-black?style=flat-square&logo=twitter)](https://twitter.com/i_sam33r)  
+[![GitHub](https://img.shields.io/badge/Code-GitHub-lightgray?style=flat-square&logo=github)](https://github.com/isameersah)
 
 ---
 
