@@ -1,13 +1,13 @@
 
 
-<h1 align="center">🔍 DorkGen Pro</h1> <a href="https://www.dmca.com/Protection/Status.aspx?ID=YOUR-ID">
+<h1 align="center">🔍 DorkGen Pro</h1>
    
 <p align="center"><i>The Ultimate Google Dorking Weapon for Bug Bounty Hunters & Pentesters</i></p>
 <p align="center">🚫 Because manually crafting 500+ dorks is for peasants 🚫</p>
 
-<a href="https://www.dmca.com/r/g7x19d3" target="_blank"> <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=YOUR-ID" alt="DMCA.com Protection Status" width="120"></a> 
+<p align="center"><img src="https://images.dmca.com/Badges/dmca_protected_16_120.png" href="https://www.dmca.com/r/g7x19d3" alt="DMCA.com Protection Status" width="120">
 
-
+</p>
 ---
 
 <p align="center">
