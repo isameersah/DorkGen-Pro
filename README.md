@@ -122,8 +122,6 @@ inurl:"/phpinfo.php" OR intitle:"index of" "backup"
 
 ---
 
----
-
 ## 📄 License
 
 MIT © 2025 Sameer Sah
